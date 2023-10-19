@@ -1,0 +1,45 @@
+.inputForm{
+    width: 50%;
+    background-color: #f4f4f4;
+    border-radius: 1rem;
+}
+
+.inputForm2{
+
+  background-color:#1F1F1F;
+  
+}
+input{
+    /* background-color: #a11e1e !important; */
+   background-color: transparent !important;
+    border: none !important;
+    display: block;
+    width: 100%;
+    border-color: transparent;
+    color: #2d2d2d;
+    
+}
+input:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+.inputText{
+  color: #fff !important;
+  
+}
+form{
+  width: 70%;
+  background-color: transparent;
+  
+}
+
+select{
+  background: none;
+}
+
+@media (max-width:500px){
+  .inputForm{
+    width: 90%;
+   
+}
+}

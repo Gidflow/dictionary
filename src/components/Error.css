@@ -1,0 +1,22 @@
+
+.error{
+    width: 100%;
+    margin: 3rem auto;
+}
+.error p:first-child{
+   font-size: 40px;
+   font-weight: 400;
+}
+
+.error p{
+    font-size: 15px;
+    color:  #757575;
+    ;
+}
+
+/* @media (max-width:500px){
+    .error{
+        width: 90%;
+    }
+     
+} */
