@@ -9,12 +9,19 @@
 select{
     background-color: transparent; 
     border: none;
+    outline: none;
    padding: 0.3rem;
    display: flex;
    align-items: center;
    justify-content: center;
       
 }
+
+
+option:checked,
+    option:hover {
+      box-shadow: 0 0 10px 100px #4ddc3b inset;
+    }
 
 .black{
     background-color:#050505;
@@ -30,6 +37,10 @@ select{
   top: -.8rem;
 
 }
+ 
+.active:active{
+    cursor: pointer;
+}
 .toggleSPan{
     
     background: #fff !important;
@@ -38,10 +49,10 @@ select{
     height: .8rem;
     border: 3px solid white;
     border-radius: 30%;
-    margin-left: .4rem;
+    margin-left: .3rem;
    
 }
- 
+
  
 @media  (max-width:500px){
     .headerStyle{
@@ -50,5 +61,11 @@ select{
         justify-content: space-between;
         align-items: center;
        
+    }
+}
+
+@media (max-width:900px){
+    .headerStyle{
+        width: 85%;
     }
 }

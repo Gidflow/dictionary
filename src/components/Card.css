@@ -7,19 +7,32 @@
     border-radius: 50%;
     background-color: #a445ed63;
     padding: .8rem;
-   
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.play .play-purple{
+ .play-purple{
     color:#a445ed;
+
 }
 
+ .play-purple:active{
+    color: #fff;
+   cursor:pointer
+}
+
+.play:active{
+    background-color:#A445ED;
+    color: #fff;
+}
 .wrap-it{
     word-wrap:initial;
+  }
+  .wrap-it span:active{
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   .source{
@@ -38,8 +51,15 @@
     background-color: #E9E9E9;
   }
 
-  .listColor::marker{
-    color: red !important; 
+  ul{
+    list-style: none; 
+  }
+ul li::before {
+    content: "\2022";  
+    color: #a445ed; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -1.3em; 
   }
   
  
@@ -71,4 +91,26 @@
         text-decoration: unset;
     }
   
+}
+
+@media (max-width:900px){
+    .card1{
+        width:85% !important;
+        
+    }
+ 
+    .source{
+        display: flex;
+        flex-direction: column;
+        gap: 2;
+       
+    }
+    .source span{
+        text-decoration: underline;
+        
+    }
+   .source a{
+        color: inherit;
+        text-decoration: unset;
+    }
 }

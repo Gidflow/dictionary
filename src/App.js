@@ -15,7 +15,7 @@ function App() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [inputError, setInputError] = useState("")
-  const {theme, value, changeTheme, handleChange, play} = useGlobalContext();
+  const {theme, selected, changeTheme, handleChange, play} = useGlobalContext();
 
   const getMeaning = async () => {
     try {
@@ -34,10 +34,12 @@ function App() {
     }
   };
   const handleInput =(e)=>{
-    setSearchWord(e.target.value)
+    
+    const values = e.target.value;
+    setSearchWord(values);
 
-    if (value.trim() === '') {
-      setInputError('Input cannot be empty');
+    if (values === '') {
+      setInputError("whoops, can't be empty");
     } else {
       setInputError('');
     }
@@ -55,13 +57,14 @@ function App() {
     audio.play();
   }
 
-  // console.log(data);
+  
 
   return (
-    <div style={{fontFamily:value}} className={`${theme && "black text-light"} App py-5`}>
+    <div style={{fontFamily:selected?.value}} className={`${theme && "black text-light"} App py-5`}>
       
-       <Header changeTheme={changeTheme} theme={theme} value={value} handleChange={handleChange}/>
-       <Input theme = {theme} searchWord={searchWord} handleChange={handleInput} handleSubmit={handleSubmit}/>
+       <Header changeTheme={changeTheme} theme={theme} selected={selected} handleChange={handleChange}/>
+       <Input theme = {theme} searchWord={searchWord} handleChange={handleInput} handleSubmit={handleSubmit} 
+       inputError={inputError} data={data}/>
        {!data && searchWord?<div className='err'>{error&&error}</div>:<Card theme={theme} play={play} searchWord={searchWord}  data={data} playAudio={playAudio}/>}
        
         

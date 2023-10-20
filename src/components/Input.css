@@ -1,13 +1,22 @@
 .inputForm{
-    width: 50%;
+    width: 100%;
     background-color: #f4f4f4;
     border-radius: 1rem;
 }
 
+.inputForm:active{
+   border: 1px solid #a445ed;
+   cursor: pointer;
+}
 .inputForm2{
 
   background-color:#1F1F1F;
   
+  
+}
+
+.inputText::placeholder{
+  color: #fff !important;
 }
 input{
     /* background-color: #a11e1e !important; */
@@ -37,9 +46,20 @@ select{
   background: none;
 }
 
+.message{
+  width: 50%;
+}
+
 @media (max-width:500px){
-  .inputForm{
+  .message{
     width: 90%;
+   
+}
+}
+
+@media (max-width:900px){
+  .message{
+    width: 85%;
    
 }
 }

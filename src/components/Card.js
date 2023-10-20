@@ -19,7 +19,7 @@ const Card = ({theme,  data, playAudio, searchWord}) => {
         <div className='d-flex justify-content-between align-items-center'>
         <h1 style={{fontWeight:"700", fontSize:"64"}} className='text-capitalize'>{data?.word}</h1>
         {
-          data.phonetics[0].audio && <span className='play mx-2'>< FaPlay  onClick={playAudio} className={`${theme && "text-light"} play-purple `} size={12}/></span>
+          data.phonetics[0].audio && <span className='play mx-2'>< FaPlay  onClick={playAudio} className="play-purple" size={12}/></span>
         }    
         </div>
       <span><p style={{color:"#a445ed"}}>{data?.phonetic}</p></span>
@@ -33,7 +33,7 @@ const Card = ({theme,  data, playAudio, searchWord}) => {
         </div>
          
          <p style={{color:"#757575"}}>meaning</p>
-         <ul className={`${theme&& "listColor"}`} style={{fontSize:"15", lineHeight:"2"}}>
+         <ul  style={{fontSize:"15", lineHeight:"2"}}>
            {meaning.definitions.map((define, index)=>{
              return <li key={index}>{define.definition}</li>
            })}
@@ -44,13 +44,10 @@ const Card = ({theme,  data, playAudio, searchWord}) => {
             if(synonyms){
              return <span key={index} style={{marginLeft:"1rem", color:"#A445ED"}}>{synonyms}</span>
             }
-            return <span></span>
+           
            })}
            
          </p>
-           
-         
-         
        </div>
       })}
       
