@@ -38,17 +38,22 @@ function App() {
     const values = e.target.value;
     setSearchWord(values);
 
-    if (values === '') {
-      setInputError("whoops, can't be empty");
-    } else {
-      setInputError('');
-    }
+    
   }
 
   const handleSubmit=(e)=>{
   e.preventDefault();
+  if (searchWord === '') {
+    setInputError("whoops, can't be empty");
+  } else if(searchWord){
+    setInputError('');
+  }
+  else if(error){
+    setError(ErrorMessage());
+  }
 
        getMeaning();
+       
   }
 
   const playAudio=()=>{
@@ -65,8 +70,10 @@ function App() {
        <Header changeTheme={changeTheme} theme={theme} selected={selected} handleChange={handleChange}/>
        <Input theme = {theme} searchWord={searchWord} handleChange={handleInput} handleSubmit={handleSubmit} 
        inputError={inputError} data={data}/>
-       {!data && searchWord?<div className='err'>{error&&error}</div>:<Card theme={theme} play={play} searchWord={searchWord}  data={data} playAudio={playAudio}/>}
+       {!data ? <div className='err'>{error}</div>:<Card theme={theme} play={play} searchWord={searchWord}  data={data} playAudio={playAudio}/>}
        
+       
+      
         
       
       </div>
